@@ -11,9 +11,11 @@ function getWeather() {
         .then(data => {
             const temperature = Math.round(data.main.temp - 273.15);
             const description = data.weather[0].description;
+            const humidity = data.main.humidity;
             
             weatherInfo.innerHTML = `<p><strong>Temperature: ${temperature}°C</strong></p>
-                                     <p><strong>Description: ${description}</strong></p>`;
+                                     <p><strong>Description: ${description}</strong></p>
+                                     <p><strong>humidity: ${humudity}%</strong></p>``;
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
